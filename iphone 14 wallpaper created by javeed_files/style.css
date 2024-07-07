@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    margin-inline: 0px;
+    margin-block: 1rem;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+.iphone-case{
+    --border-radius-outer:40px;
+    --outer-padding:0.5rem;
+    --case-color:hsl(0,0%,0%);
+    --border-radius-inner:calc(
+        var(--border-radius-outer) - var(--outer-padding)
+    );
+    box-shadow: 0px 0px 0px 2px white;
+    background-color: var(--case-color);
+    border-radius: var(--border-radius-outer);
+    padding: var(--outer-padding);
+    width: 320px;
+    aspect-ratio: 1/2;
+    position: relative;
+}
+.iphone-case >div{
+    height: 50%;
+    border-radius: 50%;
+    background-color: var(--base-color,#fdc1f7);
+}
+.iphone-case .gradient-1{
+    --base-color:#fdc1f7;
+    border-top-right-radius: var(--border-radius-inner);
+    border-top-right-radius: var(--border-radius-inner);
+    border-bottom: 2px solid var(--base-color);
+    background-image: radial-gradient(
+        circle at bottom,
+        #000000 35%,
+        #230a77 50%,
+        #c84fe7 70%,
+        #fdc1f7 90%
+    );
+
+
+}
+.iphone-case .gradient-2{
+    --base-color:#fdc1f7;
+    border-bottom-left-radius: var(--border-radius-inner);
+    border-bottom-right-radius: var(--border-radius-inner);
+    border-bottom: 2px solid var(--base-color);
+    background-image: radial-gradient(
+        circle at top,
+        #000000 35%,
+        #36557c 55%,
+        #e2e6e9 90%
+    );
+}
+.iphone-case ::before{
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left:50%;
+    transform: translateX(-50%);
+    height: 1.3rem;
+    background-color: var(--case-color);
+    width: 22%;
+    border-radius: 25px;
+}
+h1{
+    color: white;
+    position: center;
+    font-size: large;
+    font-style: italic;
+}
